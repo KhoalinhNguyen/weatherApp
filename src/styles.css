@@ -1,1 +1,157 @@
-/* You can add global styles to this file, and also import other style files */
+/* Root Variables */
+:root {
+  --blue-1: #3c429e;
+  --blue-2: #4c52ad;
+  --yellow-1: #fac742;
+  --white: #ffffff;
+  --grey-1: #ededed;
+  --shadow-dark: rgba(0, 0, 0, 0.2);
+  --shadow-light: rgba(255, 255, 255, 0.1);
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--blue-1);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Search Bar Styling */
+.search {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.search input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--grey-1);
+  color: var(--blue-1);
+  font-size: 1em;
+  text-align: center;
+}
+
+.search input::placeholder {
+  color: var(--blue-1);
+}
+
+/* Focus Effect */
+.search input:focus {
+  border: 2px solid var(--blue-1); /* Add a border on focus */
+  box-shadow: 0 0 8px var(--yellow-1); /* Add a subtle glow effect */
+  outline: none; /* Remove default outline */
+}
+
+/* Container Styling */
+.container {
+  width: 400px;
+  background-color: var(--blue-2);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px var(--shadow-dark);
+}
+
+/* Upper Section Styling */
+.upper-data {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.upper-data img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.weather-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--white);
+}
+
+.weather-data .location {
+  font-size: 1.2em;
+  margin-bottom: 0.5rem;
+}
+
+.weather-data .temperature {
+  font-size: 4em;
+  font-weight: 700;
+}
+
+/* Lower Section Styling */
+.lower-data {
+  padding: 1.5rem;
+}
+
+.more-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.info-block {
+  flex: 1 1 45%;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: var(--blue-1);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--shadow-dark);
+}
+
+.inf-block-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.inf-block-label img {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 0.25rem;
+}
+
+.inf-block-label span {
+  font-size: 0.8em;
+}
+
+.inf-block-value {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+      width: 100%;
+      border-radius: 0;
+  }
+
+  .search input {
+    width: 90%;
+}
+
+  .info-block {
+      flex: 1 1 100%;
+  }
+}
